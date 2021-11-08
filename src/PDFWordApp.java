@@ -62,7 +62,7 @@ public class PDFWordApp
 		System.out.println("--------------------");
 	}
 
-	public void convertPDFToWord()
+	public void convertPDFToWord() throws Exception
 	{
 		File[] fileName = pdfFolder.listFiles();
 
@@ -80,7 +80,7 @@ public class PDFWordApp
 		System.out.println("--------------------");
 	}
 
-	public void convertWordToPDF()
+	public void convertWordToPDF() throws Exception
 	{
 		File[] fileName = docFolder.listFiles();
 
