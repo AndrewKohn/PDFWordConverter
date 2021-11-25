@@ -19,89 +19,69 @@ public class PDFWordConverter implements ActionListener
 	{
 		PDFWordApp convertPDFWord = new PDFWordApp();
 
-		ActionListener convertToDocxButtonPressed = new ActionListener()
+		ActionListener convertToDocxButtonPressed = e ->
 		{
-			@Override
-			public void actionPerformed(ActionEvent e)
+			try
 			{
-				try
-				{
-					convertPDFWord.convertPDFToWord();
-				} catch (Exception exception)
-				{
-					exception.printStackTrace();
-				}
+				convertPDFWord.convertPDFToWord();
+			} catch (Exception exception)
+			{
+				exception.printStackTrace();
 			}
 		};
 
-		ActionListener convertToPDFButtonPressed = new ActionListener()
+		ActionListener convertToPDFButtonPressed = e ->
 		{
-			@Override
-			public void actionPerformed(ActionEvent e)
+			try
 			{
-				try
-				{
-					convertPDFWord.convertWordToPDF();
-				} catch (Exception exception)
-				{
-					exception.printStackTrace();
-				}
+				convertPDFWord.convertWordToPDF();
+			} catch (Exception err)
+			{
+				err.printStackTrace();
 			}
 		};
 
-		ActionListener openFolderOutputButtonPressed = new ActionListener()
+		ActionListener openFolderOutputButtonPressed = e ->
 		{
-			@Override
-			public void actionPerformed(ActionEvent e)
+			try
 			{
-				try
-				{
-					Desktop.getDesktop().open(convertPDFWord.getOutputFolder());
-				} catch (IOException b)
-				{
-					System.out.println("ERROR encountered while opening OUTPUT Folder...");
-					b.printStackTrace();
-				}
+				Desktop.getDesktop().open(convertPDFWord.getOutputFolder());
+			} catch (IOException b)
+			{
+				System.out.println("ERROR encountered while opening OUTPUT Folder...");
+				b.printStackTrace();
 			}
 		};
 
-		ActionListener openFolderDOCXButtonPressed = new ActionListener()
+		ActionListener openFolderDOCXButtonPressed = e ->
 		{
-			@Override
-			public void actionPerformed(ActionEvent e)
+			try
 			{
-				try
-				{
-					Desktop.getDesktop().open(convertPDFWord.getDocFolder());
-				} catch (IOException b)
-				{
-					System.out.println("ERROR encountered while opening OUTPUT Folder...");
-					b.printStackTrace();
-				}
+				Desktop.getDesktop().open(convertPDFWord.getDocFolder());
+			} catch (IOException b)
+			{
+				System.out.println("ERROR encountered while opening OUTPUT Folder...");
+				b.printStackTrace();
 			}
 		};
 
-		ActionListener openFolderPDFButtonPressed = new ActionListener()
+		ActionListener openFolderPDFButtonPressed = e ->
 		{
-			@Override
-			public void actionPerformed(ActionEvent e)
+			try
 			{
-				try
-				{
-					Desktop.getDesktop().open(convertPDFWord.getPdfFolder());
-				} catch (IOException b)
-				{
-					System.out.println("ERROR encountered while opening OUTPUT Folder...");
-					b.printStackTrace();
-				}
+				Desktop.getDesktop().open(convertPDFWord.getPdfFolder());
+			} catch (IOException b)
+			{
+				System.out.println("ERROR encountered while opening OUTPUT Folder...");
+				b.printStackTrace();
 			}
 		};
 
 		//JButton Setup
-		convertToDocxButton.setBounds(100, 200, 200, 50);
+		convertToDocxButton.setBounds(400, 200, 200, 50);
 		convertToDocxButton.addActionListener(convertToDocxButtonPressed);
 		convertToDocxButton.setVisible(true);
-		convertToPDFButton.setBounds(400, 200, 200, 50);
+		convertToPDFButton.setBounds(100, 200, 200, 50);
 		convertToPDFButton.addActionListener(convertToPDFButtonPressed);
 		convertToPDFButton.setVisible(true);
 		openFolderOutputButton.setBounds(250, 300, 200, 50);

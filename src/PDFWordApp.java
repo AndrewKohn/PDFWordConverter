@@ -6,8 +6,7 @@ import java.io.File;
 
 public class PDFWordApp
 {
-	private String desktopPath;
-	private File desktopFolder;
+
 	private File pdfFolder;
 	private File docFolder;
 	private File outputFolder;
@@ -21,6 +20,9 @@ public class PDFWordApp
 
 	public void createFileFolders()
 	{
+		String desktopPath;
+		File desktopFolder;
+
 		desktopPath = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "PDF to Word";
 		desktopFolder = new File(desktopPath);
 		pdfFolder = new File(desktopPath + File.separator + "INPUT pdf files");
@@ -62,11 +64,12 @@ public class PDFWordApp
 		System.out.println("--------------------");
 	}
 
-	public void convertPDFToWord() throws Exception
+	public void convertPDFToWord()
 	{
 		File[] fileName = pdfFolder.listFiles();
 
 		System.out.println("PDF -> DOCX FILES");
+		assert fileName != null;
 		for(File file : fileName){
 			System.out.println("Transcribing: " + file.getName());
 
@@ -80,11 +83,12 @@ public class PDFWordApp
 		System.out.println("--------------------");
 	}
 
-	public void convertWordToPDF() throws Exception
+	public void convertWordToPDF()
 	{
 		File[] fileName = docFolder.listFiles();
 
 		System.out.println("DOCX -> PDF FILES");
+		assert fileName != null;
 		for(File file : fileName){
 			System.out.println("Transcribing: " + file.getName());
 
