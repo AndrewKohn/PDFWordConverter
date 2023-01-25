@@ -1,5 +1,5 @@
 # PDFWordConverter
-Simple program that converts pdf &lt;-> docx while maintaining proper formatting
+A program that converts pdf &lt;-> docx while maintaining proper formatting
 
 Used to help with my work involving editing .pdf files from time-to-time.
 
